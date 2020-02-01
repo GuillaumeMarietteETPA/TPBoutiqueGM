@@ -12,7 +12,10 @@ struct objet {
 
 typedef struct objet objet;
 
- int choix;
+ int choix = 10;
+ int choixo = 10;
+ int choixb = 10;
+ int bourse = 300;
 
 int main() {
 
@@ -23,22 +26,146 @@ int main() {
 	objet Casquecuir = {"Casque en cuir", 40, 4, "Modeste casque, protege modeste cervelle."};
 	objet Fleche10 = {"Fleche x10", 10, 8, "Un stock de fleche bien badasse (Arc vendu separement)"};
 
+	while (choix != 3) {
+
 	printf("Bonjour etranger ! Bienvenue dans la meilleure boutique de bric-a-brac de la region ! \nJ'ai quelques objets qui pourrait vous interessez !\n");
 	printf("Acheter[1]\nVendre[2]\nSortir[3]\n");
 	scanf("%d",&choix);
 
 	if (choix == 1) {
-		printf("[1] %s | %d Berry | %d en stock | Description : %s\n", Dague.nomObj, Dague.prix, Dague.nombre, Dague.descipt);
-		printf("[2] %s | %d Berry | %d en stock | Description : %s\n", Hache.nomObj, Hache.prix, Hache.nombre, Hache.descipt);
-		printf("[3] %s | %d Berry | %d en stock | Description : %s\n", Plumephnix.nomObj, Plumephnix.prix, Plumephnix.nombre, Plumephnix.descipt);
-		printf("[4] %s | %d Berry | %d en stock | Description : %s\n", Casquecuir.nomObj, Casquecuir.prix, Casquecuir.nombre, Casquecuir.descipt);
-		printf("[5] %s | %d Berry | %d en stock | Description : %s\n", Fleche10.nomObj, Fleche10.prix, Fleche10.nombre, Fleche10.descipt);
+		printf("[1] %s | %d Berry | %d en stock \n", Dague.nomObj, Dague.prix, Dague.nombre);	
+		printf("[2] %s | %d Berry | %d en stock \n", Hache.nomObj, Hache.prix, Hache.nombre);
+		printf("[3] %s | %d Berry | %d en stock \n", Plumephnix.nomObj, Plumephnix.prix, Plumephnix.nombre);
+		printf("[4] %s | %d Berry | %d en stock \n", Casquecuir.nomObj, Casquecuir.prix, Casquecuir.nombre);
+		printf("[5] %s | %d Berry | %d en stock \n", Fleche10.nomObj, Fleche10.prix, Fleche10.nombre);
+		printf("Retour [0]\n");
+		scanf("%d",&choixo);
+		
+		if(choixo == 1) {
+			printf("Bourse : %d Berry\n", bourse);
+			printf("------------------\n", bourse);
+			printf("Description : %s\n", Dague.descipt);
+			printf("Acheter [1]\n");
+			printf("Retour [0]\n");
+			scanf("%d",&choixo);
+			if(choixo == 1 && bourse >= Dague.prix) {
+				bourse = bourse - Dague.prix;
+				printf("Vous obtenez %s !\n", Dague.nomObj);
+				printf("------------------\n", bourse);
+			}
 
+			if(choixo == 1 && bourse < Dague.prix) {
+				printf("Vous n'avez pas assez de berry !\n");
+				printf("------------------\n", bourse);
+			}
+			if(choixo == 0) {}
+
+		}
+		if(choixo == 2) {
+			printf("Bourse : %d Berry\n", bourse);
+			printf("------------------\n", bourse);
+			printf("Description : %s\n", Hache.descipt);
+			printf("Acheter [1]\n");
+			printf("Retour [0]\n");
+			scanf("%d",&choixo);
+			if(choixo == 1 && bourse >= Hache.prix) {
+				bourse = bourse - Hache.prix;
+				printf("Vous obtenez %s !\n", Hache.nomObj);
+				printf("------------------\n", bourse);
+			}
+
+			if(choixo == 1 && bourse < Hache.prix) {
+				printf("Vous n'avez pas assez de berry !\n");
+				printf("------------------\n", bourse);
+			}
+
+			if(choixo == 0) {}
+		
+		}
+		if(choixo == 3) {
+			printf("Bourse : %d Berry\n", bourse);
+			printf("------------------\n", bourse);
+			printf("Description : %s\n", Plumephnix.descipt);
+			printf("Acheter [1]\n");
+			printf("Retour [0]\n");
+			scanf("%d",&choixo);
+			if(choixo == 1 && bourse >= Plumephnix.prix) {
+				bourse = bourse - Plumephnix.prix;
+				printf("Vous obtenez %s !\n", Plumephnix.nomObj);
+				printf("------------------\n", bourse);
+			}
+
+			if(choixo == 1 && bourse < Plumephnix.prix) {
+				printf("Vous n'avez pas assez de berry !\n");
+				printf("------------------\n", bourse);
+			}
+			if(choixo == 0) {}
+		}
+		if(choixo == 4) {
+			printf("Bourse : %d Berry\n", bourse);
+			printf("------------------\n", bourse);
+			printf("Description : %s\n", Casquecuir.descipt);
+			printf("Acheter [1]\n");
+			printf("Retour [0]\n");
+			scanf("%d",&choixo);
+			if(choixo == 1 && bourse >= Casquecuir.prix) {
+				bourse = bourse - Casquecuir.prix;
+				printf("Vous obtenez %s !\n", Casquecuir.nomObj);
+				printf("------------------\n", bourse);
+			}
+
+			if(choixo == 1 && bourse < Casquecuir.prix) {
+				printf("Vous n'avez pas assez de berry !\n");
+				printf("------------------\n", bourse);
+			}
+			if(choixo == 0) {}
+		}
+		if(choixo == 5) {
+			printf("Bourse : %d Berry\n", bourse);
+			printf("------------------\n", bourse);
+			printf("Description : %s\n", Fleche10.descipt);
+			printf("Acheter [1]\n");
+			printf("Retour [0]\n");
+			scanf("%d",&choixo);
+			if(choixo == 1 && bourse >= Fleche10.prix) {
+				bourse = bourse - Fleche10.prix;
+				printf("Vous obtenez %s !\n", Fleche10.nomObj);
+				printf("------------------\n", bourse);
+			}
+
+			if(choixo == 1 && bourse < Fleche10.prix) {
+				printf("Vous n'avez pas assez de berry !\n");
+				printf("------------------\n", bourse);
+			}
+			if(choixo == 0) {}
+		}
+		if(choixo == 0) {
+
+
+		}
+
+	
+
+
+	if(choix == 2) {
 
 
 	}
 
 
+
+
+
+	
+
+}
+
+	if(choix == 3) {
+		printf("Revenez quand vous voulez !\n");
+		break;
+	}
+
+}
 
 
 
